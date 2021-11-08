@@ -28,37 +28,75 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-
+#style={'width':'500px', 'height':'450px', 'border':'5px dotted red'}
 ########################## Styl css #####################################
 tabs_styles = {
-    'height': '44px'
+    'height': '30px', 'width':'1050px', "margin": "0 auto",'color': 'blue', #'border': '1px solid #d6d6d6' ,
 }
 tab_style = {
     'borderBottom': '1px solid #d6d6d6',
     'padding': '6px',
-    'fontWeight': 'bold'
+    'fontWeight': 'bold',
+    'border-radius':'15px',
+    'background-color':'#F2F2F2',
+    'box-shadow':'4px 4px 4px lightgrey'
+    
 }
 
 tab_selected_style = {
-    'borderTop': '1px solid #d6d6d6',
+   # 'borderTop': '1px solid #d6d6d6',
     'borderBottom': '1px solid #d6d6d6',
-    'backgroundColor': '#119DFF',
+    'backgroundColor': '#172763',
     'color': 'white',
-    'padding': '6px'
+    'padding': '6px',
+    'border-radius':'15px'
 }
+
+
+##119DFF
+
+
 
 
 
 ########################### Layout #######################################
 
 app.layout = html.Div([
-    dcc.Tabs(id="tabs-styled-with-inline", value='tab-1', children=[
+
+        	# -----------Objet 1 image ---------
+		    html.Div([
+			
+
+        html.Img(src=app.get_asset_url("clubwelcom.jpg"),
+            id='foot-image',
+            style={'height':'60px',
+                    'width':'auto',
+                    'margin-right':'50px'
+                    }),
+
+        html.H3(' Football_data VIHGHJHJHJJHJKHKHHKH  ', style={'margin-bottom':'10px','color':'white','width':'auto'}
+        ),
+      
+       			
+		],id='header',className='row flex-display',style={ 'width':'30px','height':'15px','margin-bottom':'30px',
+            #'margin': '10px auto'
+        }),
+
+        
+   
+     
+        dcc.Tabs(id="tabs-styled-with-inline", value='tab-1', children=[
         dcc.Tab(label='Les joueurs', value='tab-1', style=tab_style, selected_style=tab_selected_style),
         dcc.Tab(label='Les clubs', value='tab-2', style=tab_style, selected_style=tab_selected_style),
         dcc.Tab(label='Equipe Nationale ', value='tab-3', style=tab_style, selected_style=tab_selected_style),
         dcc.Tab(label='Autres info football', value='tab-4', style=tab_style, selected_style=tab_selected_style),
     ], style=tabs_styles),
     html.Div(id='tabs-content-inline')
+
+
+   	
+
+   
 ])
 
  
