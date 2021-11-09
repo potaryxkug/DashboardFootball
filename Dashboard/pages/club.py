@@ -47,10 +47,10 @@ def contenuClub ():
                 html.Img(src=club_logo_link,
                 style={'height':'60px',      'width':'auto',      'margin-right':'20px'}),
 
-			    html.P('Club de football de ',  className='fix_label', style={'color':'#ffb41a',	'fontSize':10}),
-                html.P( club,                   className='fix_label',	style={'color':'#ffb41a',	'fontSize':10}),
+			    html.B('Club de football de {}'.format(club) ,className='fix_label', style={'color':'#ffb41a',	'fontSize':10}),
+               # html.P( club,                   className='fix_label',	style={'color':'#ffb41a',	'fontSize':10}),
 
-           ]#,className='row flex-display',style={'margin-bottom':'20px'}
+           ],className='row flex-display',style={'margin-bottom':'20px'}
            ),
 
 

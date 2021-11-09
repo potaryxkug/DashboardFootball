@@ -6,10 +6,10 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.express as px
 import pandas as pd
+
 #from Dashboard.pages.club import contenuClub
 
 from pages.club import *
-
 
 
 
@@ -69,16 +69,26 @@ app.layout = html.Div([
 
         html.Img(src=app.get_asset_url("clubwelcom.jpg"),
             id='foot-image',
-            style={'height':'60px',
+            style={'height':'80px',
                     'width':'auto',
-                    'margin-right':'50px'
+                    'margin-right':'50px',
+                    'margin-bottom':'30px'
                     }),
 
-        html.H3(' Football_data VIHGHJHJHJJHJKHKHHKH  ', style={'margin-bottom':'10px','color':'white','width':'auto'}
+        html.H3(' Football_data_VISUALIZATION  ', style={'margin-bottom':'30px','color':'white','width':'auto','margin-right':'50px'}
         ),
+
+
+         html.Img(src=app.get_asset_url("soccer.jpg"),
+            id='foot-image1',
+            style={'height':'80px',
+                    'width':'auto',
+                    'margin-right':'50px',
+                    'margin-bottom':'30px'
+                    }),
       
        			
-		],id='header',className='row flex-display',style={ 'width':'30px','height':'15px','margin-bottom':'30px',
+		],id='header',className='row flex-display',style={ 'width':'20px','height':'15px','margin-bottom':'30px',
             #'margin': '10px auto'
         }),
 
